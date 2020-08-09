@@ -14,10 +14,7 @@ import Button from "../shared/Button";
 import DetailCo from "./Detail";
 
 function Questions({ QuestionData, className }: Props) {
-  
   const [showDetail, setShowDetail] = useState(false);
-
-
 
   const togglePopup = (url) => {
     setUrl(url);
@@ -60,8 +57,6 @@ function Questions({ QuestionData, className }: Props) {
           );
         })}
       </CardWrapper>
-
-     
     </Wrapper>
   );
 }

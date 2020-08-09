@@ -18,9 +18,12 @@ function Detail({
   QuestionData,
   url,
   closeDetail,
- 
+  ChangeVote, 
   className,
 }: Props) {
+  const SaveVote = (url) => {
+    ChangeVote(url);   
+  };
 
    let detailData = QuestionData.find((item) => item.url == url);
 
@@ -69,7 +72,7 @@ function Detail({
                   iconColor={Secondary.i}
                   spacing="4.8px"
                   iconSize="16px"
-                 
+                  clicked={() => SaveVote(item.url)}
                 ></Button>
               </DetailCol>
             </DetailInfo>

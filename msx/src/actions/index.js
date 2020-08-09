@@ -10,3 +10,13 @@ export const getQuestionsList = () => async (dispatch) => {
   }); 
 };
 
+export const setChangeVote = url => async (dispatch) => {
+  const res = await tmdbAPI.post(url);
+  dispatch({
+    type: TYPES.UPDATE_VOTE_RESULT,
+    payload: {
+      url,
+      votes: res.data.votes
+    }
+  })
+};
